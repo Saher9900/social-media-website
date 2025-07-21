@@ -81,6 +81,20 @@
   display: none;
 }
 
+.register-modal .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register-modal .top .close {
+  cursor: pointer;
+}
+
+.register-modal .top .close i {
+  font-size: 25px;
+}
+
 .register-modal input {
   width: 100%;
   border: #4a5568 solid 1px;

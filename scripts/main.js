@@ -25,6 +25,7 @@ let name_reg = document.getElementById("name-reg");
 let profile_image_reg = document.getElementById("profile-image-reg");
 let creat_reg = document.getElementById("create");
 let close_post_mod = document.getElementById("close-post-mod");
+let close_register_mod = document.getElementById("close-register-mod");
 
 checkLogin();
 
@@ -55,6 +56,10 @@ new_post.onclick = function () {
 
 close_post_mod.onclick = function () {
   post_modal.style.display = "none";
+};
+
+close_register_mod.onclick = function () {
+  register_modal.style.display = "none";
 };
 
 publish.onclick = function () {
