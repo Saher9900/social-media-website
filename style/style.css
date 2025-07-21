@@ -1,0 +1,353 @@
+.new-post {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  background-color: rgb(73, 127, 73);
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 35px;
+}
+
+.info {
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto 0 auto; /* Center horizontally with top margin */
+  border-radius: 16px;
+  background: #f8fafc;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+/* POST MODAL */
+
+.post-modal {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+  border: 1px solid;
+  display: none;
+}
+
+.post-modal .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-modal .top .close {
+  cursor: pointer;
+}
+
+.post-modal .top .close i {
+  font-size: 25px;
+}
+
+.register-modal {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  z-index: 1;
+  border: 1px solid;
+  display: none;
+}
+
+.register-modal input {
+  width: 100%;
+  border: #4a5568 solid 1px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 500px) {
+  .info {
+    max-width: 95vw;
+    padding: 20px 10px;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.info .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.info .image img {
+  width: 100%;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.post-inner {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+
+.post-inner:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.post-inner>div:nth-child(1) {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.post-inner>div:nth-child(1) .image-inner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e8f4fd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-inner>div:nth-child(1) .image-inner img {
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+}
+
+.post-inner>div:nth-child(1) h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.post-inner>div:nth-child(2) {
+  margin-bottom: 16px;
+}
+
+.post-inner>div:nth-child(2) .title-inner h4 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.post-inner>div:nth-child(2) .body-inner {
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.post-inner>div:nth-child(3) {
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-inner>div:nth-child(3) img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.post-inner>div:nth-child(3) img:hover {
+  transform: scale(1.02);
+}
+
+.post-inner>div:nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.post-inner>div:nth-child(4) p {
+  margin: 0;
+  font-size: 13px;
+  color: #718096;
+  font-weight: 500;
+}
+
+.post-inner>div:nth-child(4) p:first-child {
+  color: #4a5568;
+}
+
+/* Make posts fill page horizontally on small screens */
+@media (max-width: 555px) {
+  /* Ensure body and html don't constrain width */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Target the posts container directly */
+  .posts {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 10px 5px !important;
+    flex: 0 0 100% !important;
+    box-sizing: border-box !important;
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+    float: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Override any Bootstrap container constraints */
+  .posts.container,
+  .posts.container-fluid {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 10px 5px !important;
+  }
+  
+  /* Override any potential parent container constraints */
+  body > .posts,
+  html > body > .posts {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 10px 5px !important;
+  }
+  
+  /* Force full width on the posts container */
+  #posts.posts {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 10px 5px !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  
+  .post-inner {
+    margin: 0 0 15px 0 !important;
+    border-radius: 8px;
+    padding: 16px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .post-inner>div:nth-child(1) {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .post-inner>div:nth-child(1) .image-inner {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .post-inner>div:nth-child(1) h3 {
+    font-size: 15px;
+  }
+  
+  .post-inner>div:nth-child(2) {
+    margin-bottom: 12px;
+  }
+  
+  .post-inner>div:nth-child(2) .title-inner h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .post-inner>div:nth-child(2) .body-inner {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  
+  .post-inner>div:nth-child(3) {
+    margin-bottom: 12px;
+    border-radius: 6px;
+  }
+  
+  .post-inner>div:nth-child(4) {
+    padding-top: 12px;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  
+  .post-inner>div:nth-child(4) p {
+    font-size: 12px;
+  }
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-body>div {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body>div input {
+  width: 70%;
+}
+
+.modal-body>div input:focus {
+  outline: none;
+}
+
+.alert-success {
+  position: fixed;
+  top: 400px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  z-index: 10;
+  display: none;
+}
