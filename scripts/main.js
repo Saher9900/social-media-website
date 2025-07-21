@@ -131,9 +131,10 @@ function loginRequest() {
       profile_image.src = data.user.profile_image;
       localStorage.setItem("image", data.user.profile_image);
       loginMode();
-    }).catch(() => {
-      showModal("username or password is wrong", "red")
     })
+    .catch(() => {
+      showModal("username or password is wrong", "red");
+    });
 }
 
 // REGISTER
@@ -142,7 +143,11 @@ function registerRequest() {
   let formData = new FormData();
   formData.append("username", username_reg.value);
   formData.append("password", password_reg.value);
-  formData.append("image", profile_image_reg.files[0]);
+  if (profile_image_reg.files.length > 0) {
+    formData.append("image", profile_image_reg.files[0]);
+  } else {
+    localStorage.removeItem("image");
+  }
   formData.append("name", name_reg.value);
   formData.append("email", email_reg.value);
   fetch("https://tarmeezacademy.com/api/v1/register", {
@@ -240,7 +245,7 @@ function loginMode() {
     profile_name.innerHTML = localStorage.getItem("name");
     profile_image.src = localStorage.getItem("image");
   } else {
-    notLoginMode()
+    notLoginMode();
   }
 }
 
