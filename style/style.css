@@ -20,7 +20,7 @@
 .info {
   width: 100%;
   max-width: 400px;
-  margin: 40px auto 0 auto; /* Center horizontally with top margin */
+  margin: 40px  auto;
   border-radius: 16px;
   -webkit-border-radius: 16px;
   -moz-border-radius: 16px;
@@ -38,7 +38,11 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  gap: 20px;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   border: 1px solid #e2e8f0;
 }
 
@@ -166,6 +170,9 @@
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .info .image img {
@@ -319,13 +326,15 @@
 
 /* Make posts fill page horizontally on small screens */
 @media (max-width: 555px) {
+
   /* Ensure body and html don't constrain width */
-  html, body {
+  html,
+  body {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
   }
-  
+
   /* Target the posts container directly */
   .posts {
     width: 100vw !important;
@@ -349,7 +358,7 @@
     -ms-flex-direction: column !important;
     flex-direction: column !important;
   }
-  
+
   /* Override any Bootstrap container constraints */
   .posts.container,
   .posts.container-fluid {
@@ -358,16 +367,16 @@
     margin: 0 !important;
     padding: 10px 5px !important;
   }
-  
+
   /* Override any potential parent container constraints */
-  body > .posts,
-  html > body > .posts {
+  body>.posts,
+  html>body>.posts {
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 !important;
     padding: 10px 5px !important;
   }
-  
+
   /* Force full width on the posts container */
   #posts.posts {
     width: 100vw !important;
@@ -377,7 +386,7 @@
     left: 0 !important;
     right: 0 !important;
   }
-  
+
   .post-inner {
     margin: 0 0 15px 0 !important;
     border-radius: 8px;
@@ -388,42 +397,42 @@
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
-  
+
   .post-inner>div:nth-child(1) {
     gap: 10px;
     margin-bottom: 12px;
   }
-  
+
   .post-inner>div:nth-child(1) .image-inner {
     width: 40px;
     height: 40px;
   }
-  
+
   .post-inner>div:nth-child(1) h3 {
     font-size: 15px;
   }
-  
+
   .post-inner>div:nth-child(2) {
     margin-bottom: 12px;
   }
-  
+
   .post-inner>div:nth-child(2) .title-inner h4 {
     font-size: 16px;
     margin-bottom: 8px;
   }
-  
+
   .post-inner>div:nth-child(2) .body-inner {
     font-size: 13px;
     line-height: 1.5;
   }
-  
+
   .post-inner>div:nth-child(3) {
     margin-bottom: 12px;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
   }
-  
+
   .post-inner>div:nth-child(4) {
     padding-top: 12px;
     -webkit-flex-direction: column;
@@ -434,7 +443,7 @@
     -ms-flex-align: flex-start;
     align-items: flex-start;
   }
-  
+
   .post-inner>div:nth-child(4) p {
     font-size: 12px;
   }
