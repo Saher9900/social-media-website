@@ -12,6 +12,9 @@
   outline: none;
   color: #FFF;
   font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .info {

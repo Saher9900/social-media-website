@@ -240,7 +240,7 @@ function loginMode() {
     login_nav.style.display = "none";
     register_nav.style.display = "none";
     logout_nav.style.display = "block";
-    new_post.style.display = "block";
+    new_post.style.display = "flex";
     info.style.display = "flex";
     profile_name.innerHTML = localStorage.getItem("name");
     profile_image.src = localStorage.getItem("image");
